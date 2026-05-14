@@ -80,8 +80,36 @@ hr {
   background: #1a1a1a;
 }
 
+.email {
+  font-family: var(--font-mono);
+  color: var(--fg);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 0.25rem;
+}
+
 .contact a {
-  margin: 0 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--link);
+  text-decoration: none;
+  line-height: 0;
+}
+
+.contact a:hover { color: var(--accent); }
+
+.contact .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 /* --- Lists (publications, projects, experience, posts) --- */
@@ -89,10 +117,22 @@ hr {
 ul.pubs,
 ul.projects,
 ul.experience,
+ul.coursework,
 ul.posts {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+ul.coursework > li {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+ul.coursework .meta {
+  min-width: 5.5rem;
 }
 
 ul.pubs > li,
