@@ -1,0 +1,15 @@
+title: "Bhargav Borah"
+email: bhargav_borah@tamu.edu
+description: "Personal website of Bhargav Borah — MS Computer Engineering, Texas A&M."
+url: "https://bhargav-borah.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - "CV Bhargav Borah.pdf"

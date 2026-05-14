@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<section id="bio">
+  <img src="{{ '/assets/img/profile.png' | relative_url }}" alt="Bhargav Borah" class="profile">
+  <h1>Bhargav Borah</h1>
+  <p>
+    MS student in Computer Engineering at <a href="https://engineering.tamu.edu/cse/index.html">Texas A&amp;M University</a>,
+    advised by <a href="https://people.engr.tamu.edu/guni/index.html">Dr. Guni Sharon</a>.
+    Previously, B.Tech in Electrical &amp; Electronics from
+    <a href="https://nitdelhi.ac.in/">NIT Delhi</a>.
+  </p>
+  <p>
+    My research focuses on <strong>reinforcement learning</strong> &mdash;
+    particularly offline RL, representation learning, and the geometry of value functions.
+    I&rsquo;m also interested in mechanistic interpretability and the inner workings of large language models.
+  </p>
+  <p class="contact">
+    <a href="mailto:bhargav_borah@tamu.edu">email</a> &middot;
+    <a href="https://github.com/bhargav-borah">github</a> &middot;
+    <a href="https://www.linkedin.com/in/bhargav-borah-735b6226b/">linkedin</a> &middot;
+    <a href="https://medium.com/@bhargavborah020">medium</a> &middot;
+    <a href="{{ '/assets/cv.pdf' | relative_url }}">cv</a>
+  </p>
+</section>
+
+<hr>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pubs">
+    <li class="pub-pending">
+      <span class="meta">2026</span>
+      <strong>Spectral Prior-based Representation Shaping for Offline Reinforcement Learning</strong>.
+      Bhargav Borah, Guni Sharon. <em>(under submission)</em>
+    </li>
+  </ul>
+</section>
+
+<hr>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <ul class="projects">
+    <li>
+      <strong>MCTS for LLM Mathematical Reasoning</strong>
+      <span class="meta">CSCE 642</span>
+      <p>A reasoning framework combining Monte Carlo Tree Search with Tree-of-Thought-style structured exploration and
+      process reward signals to enhance step-by-step mathematical problem solving in LLMs. Trained a lightweight policy
+      network via experience replay on collected MCTS trajectories using a fine-tuned DeepSeek-R1-Distill-Qwen-1.5B
+      backbone with symbolic verification and log-likelihood intermediate rewards.</p>
+    </li>
+    <li>
+      <strong>Circuit Development During Fine-Tuning</strong>
+      <span class="meta">ECEN 649</span>
+      <p>Applied mechanistic interpretability techniques &mdash; path-patching, Desiderata-based Component Masking
+      (DCM), and Cross-Model Activation Patching (CMAP) &mdash; to track how circuits evolve across LoRA, QLoRA, and
+      full fine-tuning checkpoints. Showed that parameter-efficient fine-tuning preserves the base model&rsquo;s
+      circuit structure while progressively enhancing component functionality.</p>
+    </li>
+    <li>
+      <strong>PhysicsPDEAgent: Agentic AI for PDE Solver Generation</strong>
+      <span class="meta">ECEN 744</span>
+      <p>An agentic LLM framework that automatically generates, verifies, and iteratively repairs numerical PDE solvers
+      by embedding physics constraints &mdash; conservation laws, stability conditions, energy bounds, positivity
+      requirements &mdash; into the generation and correction loops. Evaluated across four PDE families (advection,
+      Burgers&rsquo;, Darcy flow, reaction-diffusion).</p>
+    </li>
+    <li>
+      <strong>Continuous Thought Machine on MNIST</strong>
+      <p>Reproduced the Continuous Thought Machines (Darlow et al., 2025) architecture, which models neural
+      synchronization and an internal temporal dimension inspired by biological cognition. Validated on MNIST,
+      replicating the paper&rsquo;s reported accuracy and prediction behavior.</p>
+    </li>
+    <li>
+      <strong>Vision Transformer for Image Classification</strong>
+      <p>Implemented a Vision Transformer from scratch following <em>An Image is Worth 16&times;16 Words</em>
+      (Dosovitskiy et al., 2020), including patch embedding and multi-head self-attention. Benchmarked on CIFAR-10
+      against CNN baselines.</p>
+    </li>
+    <li>
+      <strong>Neural Machine Translation with Transformers</strong>
+      <p>Built an English&ndash;German NMT system from scratch following <em>Attention Is All You Need</em>
+      (Vaswani et al., 2017): multi-head self-attention, positional encodings, and a full encoder&ndash;decoder
+      pipeline with training and inference support.</p>
+    </li>
+    <li>
+      <strong>Neural Style Transfer for Artistic Rendering</strong>
+      <p>Reproduced <em>A Neural Algorithm of Artistic Style</em> (Gatys et al., 2015) in PyTorch, leveraging VGG
+      feature representations for style and content separation to render arbitrary content images in the style of
+      reference artworks.</p>
+    </li>
+  </ul>
+</section>
+
+<hr>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="experience">
+    <li>
+      <span class="meta">Dec 2024 &ndash; Jun 2025</span>
+      <strong>Research Intern</strong>, AI &amp; Big Data Computing Lab,
+      Chang Gung University (Prof. Prasan Sahoo).
+      Extended transformer attention to operate over hierarchical segments alongside individual tokens for long-range
+      contextual modeling.
+    </li>
+    <li>
+      <span class="meta">Jun 2024 &ndash; Jul 2024</span>
+      <strong>Research Intern</strong>, IIT Patna (Prof. Rishav Singh).
+      Designed a CNN&ndash;Kolmogorov&ndash;Arnold Network hybrid for automated detection and classification of
+      degenerative spine conditions from lumbar MRI scans.
+    </li>
+  </ul>
+</section>
+
+<hr>
+
+<section id="blog">
+  <h2>Blog</h2>
+  {% if site.posts.size > 0 %}
+    <ul class="posts">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <span class="meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/blog/' | relative_url }}">see all posts &rarr;</a></p>
+  {% else %}
+    <p class="meta">nothing here yet.</p>
+  {% endif %}
+</section>
