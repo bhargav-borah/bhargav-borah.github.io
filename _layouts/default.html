@@ -8,5 +8,17 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  <script>
+    // Open external links (and the CV PDF) in a new tab.
+    document.querySelectorAll('a').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var isExternal = /^https?:\/\//i.test(href) && a.hostname !== location.hostname;
+      var isPdf = /\.pdf($|\?|#)/i.test(href);
+      if (isExternal || isPdf) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    });
+  </script>
 </body>
 </html>
